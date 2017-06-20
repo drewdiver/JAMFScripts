@@ -20,7 +20,7 @@ currentUser=$(ls -l /dev/console | awk '{ print $3 }')
 # attempt to alter its own dock.
 PLIST=/Users/$currentUser/Library/Preferences/com.apple.dock.plist
 
-# List of apps to append to dock
+# List of apps to append to dock (add whatever you want here)
 applicationsArray=("Safari.app"
                    "FireFox.app"
                    "Google Chrome.app"
