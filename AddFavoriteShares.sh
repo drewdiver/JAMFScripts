@@ -1,9 +1,9 @@
 #!/bin/sh
-#Title:			 AddFavoriteShares.sh
+#Title:			   AddFavoriteShares.sh
 #Description:	 This will populate a users "Connect to Server" 
-#				 menu with the servers you specify.
-#Author:		 Drew Diver
-#Date:			 2017-06-20
+#				       menu with the servers you specify.
+#Author:		   Drew Diver
+#Date:			   2017-06-20
 #==================================================================
 
 # CONSTANTS
