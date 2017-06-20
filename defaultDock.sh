@@ -18,12 +18,7 @@ currentUser=$(ls -l /dev/console | awk '{ print $3 }')
 # Generate the path to the current users dock plist.
 # If you run without specifying, JAMF runs as root and will therefore
 # attempt to alter its own dock.
-plist=/Users/$currentUser/Library/Preferences/com.apple.dock.plist
-
-# Echo the results of the variables to the JSS for any troubleshooting purposes
-echo "Current User: $currentUser"
-echo "Users Plist Path: $plist"
-
+PLIST=/Users/$currentUser/Library/Preferences/com.apple.dock.plist
 
 # List of apps to append to dock
 applicationsArray=("Safari.app"
@@ -35,16 +30,16 @@ applicationsArray=("Safari.app"
 
 # First clear the dock, applying '--no-restart' to save all the changes
 # until the very end
-/usr/local/bin/dockutil --remove all --no-restart $plist
+/usr/local/bin/dockutil --remove all --no-restart $PLIST
 
 # Iterate the array and add each in order
 for app in "${applicationsArray[@]}"
 do
-  $DOCKUTIL --add /Applications/$app --no-restart $plist
+  $DOCKUTIL --add /Applications/$app --no-restart $PLIST
 done
 
 # Add Downloads folder shortcut to Dock
-$DOCKUTIL --add "/Users/$currentUser/Downloads" --view grid --display folder --no-restart $plist
+$DOCKUTIL --add "/Users/$currentUser/Downloads" --view grid --display folder --no-restart $PLIST
 
 # Force reload plists
 killall cfprefsd
