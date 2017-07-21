@@ -1,7 +1,10 @@
 #!/bin/sh
 
 userCount=0
-userArray=$(find /Users ! -name 'Shared' -type d -mtime +90 -maxdepth 1)
+# Pull the current logged in user and omit in search as a fail-safe
+currentUser=$(ls -l /dev/console | awk '{ print $3 }')
+userArray=$(find /Users ! -name 'Shared' ! -name "$currentUser" -type d -mtime
+            +91 -maxdepth 1 -mindepth 1)
 
 for user in "${userArray[@]}"
 do
