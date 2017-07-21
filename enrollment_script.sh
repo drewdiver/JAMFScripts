@@ -63,7 +63,7 @@ do
 done
 
 # Enable FileVault if it isn't already enabled.
-if [[ $fv_status == false ]];
+if [[ $fv_status == false ]]
 then
     jamf policy -event enable_filevault
 else
