@@ -10,8 +10,6 @@
 	<array>
 		<string>/bin/sh</string>
 		<string>/Library/Scripts/mapnetworkshares.sh</string>
-		<string>-randomDelaySeconds</string>
-		<string>60</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
