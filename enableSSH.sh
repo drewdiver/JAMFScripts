@@ -19,8 +19,7 @@ ssh_group="com.apple.access_ssh"
 remote_login_status=$(systemsetup -getremotelogin)
 
 # Who is enabled for SSH access?
-ssh_members=$(dscl . -read /Groups/com.apple.access_ssh GroupMembership
-                    | sed 's/GroupMembership: //')
+ssh_members=$(dscl . -read /Groups/com.apple.access_ssh GroupMembership | sed 's/GroupMembership: //')
 
 # Enable SSH if not already enabled
 if [[ $remote_login_status == 'Remote Login: Off' ]];
