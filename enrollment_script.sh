@@ -1,9 +1,8 @@
 #!/bin/sh
 #
 # Drew Diver 2017
-# NetEnt Enrollment Script
 #
-# Note: Order matters! Be aware of any additions.
+# Note: Order matters!
 #       FileVault MUST be called last as it will force reboot.
 #       DockUtil MUST be installed before you can "setup_dock" etc.
 #
